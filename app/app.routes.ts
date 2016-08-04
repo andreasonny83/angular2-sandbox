@@ -8,7 +8,9 @@ const routes: RouterConfig = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'user', children: [
-    { path: ':id', component: UserDashbardComponent }
+    { path: ':id', children: [
+      { path: '', component: UserDashbardComponent }
+    ]}
   ]},
   { path: '**', component: PageNotFoundComponent }
 ];
